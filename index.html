@@ -2,1070 +2,168 @@
 <html lang="fr">
 
 <head>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<!-- AOS -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Eco Livreur | La Livraison Économique à Fès</title>
-
-    <meta name="description"
-        content="Eco Livreur est votre service de livraison économique à Fès. Rapide, fiable et professionnel.">
-
-    <!-- Google Fonts -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- AOS Animation -->
-
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <!-- Swiper -->
-
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- CSS -->
+    <title>Eco App</title>
 
     <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-<!-- ================= LOADER ================= -->
 
-<div id="loader">
+    <header>
 
-    <div class="loader-content">
+        <img
+            src="logo.png"
+            alt="Eco Livreur"
+            class="logo"
+        >
 
-        <img src="logo.png" alt="Eco Livreur">
+        <h1>ECO APP</h1>
 
-        <h2>Eco Livreur</h2>
+        <p>Gestion des commandes</p>
 
-        <div class="loading-bar">
+    </header>
 
-            <span></span>
 
-        </div>
+    <main>
 
-    </div>
 
-</div>
+        <section class="card">
 
-<!-- ================= CURSOR ================= -->
+            <h2>➕ Nouvelle commande</h2>
 
-<div class="cursor"></div>
 
-<div class="cursor2"></div>
+            <form id="orderForm">
 
-<!-- ================= NAVBAR ================= -->
 
-<header id="header">
+                <label for="clientName">
+                    Nom du client
+                </label>
 
-<nav class="navbar">
+                <input
+                    type="text"
+                    id="clientName"
+                    placeholder="Nom du client"
+                    required
+                >
 
-<div class="logo">
 
-<img src="logo.png" alt="Eco Livreur">
+                <label for="location">
+                    📍 Lieu
+                </label>
 
-<h2>Eco Livreur</h2>
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Lieu de livraison"
+                    required
+                >
 
-</div>
 
-<ul class="nav-links">
+                <label for="phone">
+                    📞 Téléphone
+                </label>
 
-<li><a href="#home">Accueil</a></li>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="06 XX XX XX XX"
+                    required
+                >
 
-<li><a href="#about">À propos</a></li>
 
-<li><a href="#services">Services</a></li>
+                <label for="orderType">
+                    📦 Type de commande
+                </label>
 
-<li><a href="#partners">Partenaires</a></li>
+                <input
+                    type="text"
+                    id="orderType"
+                    placeholder="Ex: Colis"
+                    required
+                >
 
-<li><a href="#stats">Statistiques</a></li>
 
-<li><a href="#contact">Contact</a></li>
+                <label for="price">
+                    💰 Prix
+                </label>
 
-</ul>
+                <input
+                    type="number"
+                    id="price"
+                    placeholder="Prix en DH"
+                    required
+                >
 
-<div class="menu-btn">
 
-<i class="fa-solid fa-bars"></i>
+                <label for="status">
+                    📌 Statut
+                </label>
 
-</div>
+                <select id="status">
 
-</nav>
+                    <option value="Reçue">
+                        ✅ Reçue
+                    </option>
 
-</header>
+                    <option value="Non reçue">
+                        ⏳ Non reçue
+                    </option>
 
-<!-- ================= HERO ================= -->
+                </select>
 
-<section id="home">
 
-<div class="hero-overlay"></div>
+                <label for="notes">
+                    📝 Notes
+                </label>
 
-<div class="hero-container">
+                <textarea
+                    id="notes"
+                    placeholder="Notes..."
+                ></textarea>
 
-<div class="hero-left"
-data-aos="fade-right">
 
-<img src="logo.png"
-class="hero-logo">
+                <button type="submit">
+                    💾 Enregistrer
+                </button>
 
-<h3>
 
-Fondateur
+            </form>
 
-</h3>
 
-<h1>
+        </section>
 
-YOUNES<br>
 
-ALAOUI ISMAILI
+        <section class="card">
 
-</h1>
+            <h2>📋 Commandes du jour</h2>
 
-<p>
+            <div id="ordersList">
 
-La Livraison Économique à Fès.
-
-Rapide • Fiable • Économique.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#contact"
-class="btn">
-
-Commander
-
-</a>
-
-<a href="https://wa.me/212680888210"
-class="btn2">
-
-WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-right"
-data-aos="zoom-in">
-
-<img src="hero.jpg"
-alt="Eco Livreur">
-
-</div>
-
-</div>
-
-<div class="scroll-down">
-
-<i class="fa-solid fa-angle-down"></i>
-
-</div>
-
-</section>
-<!--==================== ABOUT ====================-->
-
-<section class="about section" id="about">
-
-    <div class="container">
-
-        <div class="about-image" data-aos="fade-right">
-
-            <img src="about.jpg" alt="Eco Livreur">
-
-        </div>
-
-        <div class="about-content" data-aos="fade-left">
-
-            <span class="section-subtitle">À Propos de Nous</span>
-
-            <h2 class="section-title">
-                Votre partenaire de confiance à Fès
-            </h2>
-
-            <p>
-                Eco Livreur est un service de livraison économique basé à Fès.
-                Notre mission est d'offrir une livraison rapide, fiable et
-                professionnelle aux particuliers, commerçants et entreprises.
-            </p>
-
-            <div class="about-boxes">
-
-                <div class="about-box">
-
-                    <i class="fa-solid fa-truck-fast"></i>
-
-                    <h3>Rapidité</h3>
-
-                    <p>Livraison express partout à Fès.</p>
-
-                </div>
-
-                <div class="about-box">
-
-                    <i class="fa-solid fa-shield-heart"></i>
-
-                    <h3>Fiabilité</h3>
-
-                    <p>Vos colis sont entre de bonnes mains.</p>
-
-                </div>
-
-                <div class="about-box">
-
-                    <i class="fa-solid fa-coins"></i>
-
-                    <h3>Économie</h3>
-
-                    <p>Des tarifs compétitifs pour tous.</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--==================== SERVICES ====================-->
-
-<section class="services section" id="services">
-
-    <div class="section-header" data-aos="fade-up">
-
-        <span class="section-subtitle">
-            Nos Services
-        </span>
-
-        <h2 class="section-title">
-            Des services adaptés à vos besoins
-        </h2>
-
-    </div>
-
-    <div class="services-container">
-
-        <div class="service-card" data-aos="zoom-in">
-
-            <img src="services1.jpg" alt="Livraison Express">
-
-            <i class="fa-solid fa-bolt"></i>
-
-            <h3>Livraison Express</h3>
-
-            <p>Livraison rapide partout à Fès.</p>
-
-        </div>
-
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-
-            <img src="services2.jpg" alt="Courses">
-
-            <i class="fa-solid fa-cart-shopping"></i>
-
-            <h3>Courses</h3>
-
-            <p>Nous faisons vos achats à votre place.</p>
-
-        </div>
-
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-
-            <img src="services3.jpg" alt="Restaurants">
-
-            <i class="fa-solid fa-utensils"></i>
-
-            <h3>Restaurants</h3>
-
-            <p>Livraison de repas en toute sécurité.</p>
-
-        </div>
-
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-
-            <img src="services4.jpg" alt="Documents">
-
-            <i class="fa-solid fa-file-lines"></i>
-
-            <h3>Documents</h3>
-
-            <p>Transport rapide de vos documents.</p>
-
-        </div>
-
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-
-            <img src="services5.jpg" alt="Pharmacie">
-
-            <i class="fa-solid fa-prescription-bottle-medical"></i>
-
-            <h3>Pharmacie</h3>
-
-            <p>Livraison de produits pharmaceutiques.</p>
-
-        </div>
-
-        <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
-
-            <img src="services6.jpg" alt="Entreprises">
-
-            <i class="fa-solid fa-building"></i>
-
-            <h3>Entreprises</h3>
-
-            <p>Solutions de livraison pour les entreprises.</p>
-
-        </div>
-
-    </div>
-
-</section>
-<!--==================== DELIVERY ZONE ====================-->
-
-<section class="delivery-zone section" id="zone">
-
-    <div class="section-header" data-aos="fade-up">
-
-        <span class="section-subtitle">
-            Zone de Livraison
-        </span>
-
-        <h2 class="section-title">
-            Nous couvrons toute la ville de Fès
-        </h2>
-
-        <p>
-            Livraison rapide dans tous les quartiers de Fès.
-        </p>
-
-    </div>
-
-    <div class="zone-container">
-
-        <div class="zone-image" data-aos="fade-right">
-
-            <img src="fes.jpg" alt="Fès">
-
-        </div>
-
-        <div class="zone-content" data-aos="fade-left">
-
-            <div class="zone-card">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>Ville Nouvelle</span>
-
-            </div>
-
-            <div class="zone-card">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>Centre Ville</span>
-
-            </div>
-
-            <div class="zone-card">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>Narjiss</span>
-
-            </div>
-
-            <div class="zone-card">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>Saïss</span>
-
-            </div>
-
-            <div class="zone-card">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>Bensouda</span>
-
-            </div>
-
-            <div class="zone-card">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>Route d'Imouzzer</span>
-
-            </div>
-
-            <div class="zone-card">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>Atlas</span>
-
-            </div>
-
-            <div class="zone-card">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>Oued Fès</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--==================== PARTNERS ====================-->
-
-<section class="partners section" id="partners">
-
-    <div class="section-header" data-aos="fade-up">
-
-        <span class="section-subtitle">
-
-            Nos Partenaires
-
-        </span>
-
-        <h2 class="section-title">
-
-            Ils nous font confiance
-
-        </h2>
-
-    </div>
-
-    <div class="partners-slider swiper">
-
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-
-                <img src="partner1.png">
-
-            </div>
-
-            <div class="swiper-slide">
-
-                <img src="partner2.png">
-
-            </div>
-
-            <div class="swiper-slide">
-
-                <img src="partner3.png">
-
-            </div>
-
-            <div class="swiper-slide">
-
-                <img src="partner4.png">
-
-            </div>
-
-            <div class="swiper-slide">
-
-                <img src="partner5.png">
-
-            </div>
-
-            <div class="swiper-slide">
-
-                <img src="partner6.png">
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--==================== GALLERY ====================-->
-
-<section class="gallery section" id="gallery">
-
-    <div class="section-header" data-aos="fade-up">
-
-        <span class="section-subtitle">
-
-            Galerie
-
-        </span>
-
-        <h2 class="section-title">
-
-            Découvrez Eco Livreur
-
-        </h2>
-
-    </div>
-
-    <div class="gallery-grid">
-
-        <div class="gallery-item">
-
-            <img src="maroc5.jpg">
-
-        </div>
-
-        <div class="gallery-item">
-
-            <img src="maroc4.jpg">
-
-        </div>
-
-        <div class="gallery-item">
-
-            <img src="maroc1.jpg">
-
-        </div>
-
-        <div class="gallery-item">
-
-            <img src="maroc2.jpg">
-
-        </div>
-
-        <div class="gallery-item">
-
-            <img src="maroc3.jpg">
-
-        </div>
-
-        <div class="gallery-item">
-
-            <img src="maroc6.jpg">
-
-        </div>
-
-    </div>
-
-</section>
-<!--==================== STATISTICS ====================-->
-
-<section class="statistics section" id="stats">
-
-    <div class="section-header" data-aos="fade-up">
-
-        <span class="section-subtitle">
-            Nos Statistiques
-        </span>
-
-        <h2 class="section-title">
-            Des chiffres qui parlent
-        </h2>
-
-    </div>
-
-    <div class="stats-container">
-
-        <div class="stat-card" data-aos="zoom-in">
-
-            <i class="fa-solid fa-box"></i>
-
-            <h2 class="counter" data-target="5000">0</h2>
-
-            <p>Livraisons</p>
-
-        </div>
-
-        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
-
-            <i class="fa-solid fa-handshake"></i>
-
-            <h2 class="counter" data-target="100">0</h2>
-
-            <p>Partenaires</p>
-
-        </div>
-
-        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
-
-            <i class="fa-solid fa-face-smile"></i>
-
-            <h2 class="counter" data-target="98">0</h2>
-
-            <p>Clients satisfaits (%)</p>
-
-        </div>
-
-        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
-
-            <i class="fa-solid fa-headset"></i>
-
-            <h2>24/7</h2>
-
-            <p>Support</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--==================== TESTIMONIALS ====================-->
-
-<section class="testimonials section">
-
-    <div class="section-header" data-aos="fade-up">
-
-        <span class="section-subtitle">
-            Avis Clients
-        </span>
-
-        <h2 class="section-title">
-            Ce que disent nos clients
-        </h2>
-
-    </div>
-
-    <div class="swiper testimonialSwiper">
-
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-
-                <div class="testimonial-card">
-
-                    <img src="client1.jpg" alt="">
-
-                    <h3>Mohamed</h3>
-
-                    <div class="stars">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-
-                    <p>
-                        Service rapide et très professionnel.
-                        Je recommande Eco Livreur.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="swiper-slide">
-
-                <div class="testimonial-card">
-
-                    <img src="client2.jpg" alt="">
-
-                    <h3>Fatima</h3>
-
-                    <div class="stars">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-
-                    <p>
-                        Toujours à l'heure et très sérieux.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="swiper-slide">
-
-                <div class="testimonial-card">
-
-                    <img src="client3.jpg" alt="">
-
-                    <h3>Youssef</h3>
-
-                    <div class="stars">
-                        ⭐⭐⭐⭐⭐
-                    </div>
-
-                    <p>
-                        Excellent rapport qualité-prix.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--==================== SOCIAL MEDIA ====================-->
-
-<section class="social section">
-
-    <div class="section-header" data-aos="fade-up">
-
-        <span class="section-subtitle">
-
-            Suivez-nous
-
-        </span>
-
-        <h2 class="section-title">
-
-            Nos Réseaux Sociaux
-
-        </h2>
-
-    </div>
-
-    <div class="social-container">
-
-        <a href="https://www.instagram.com/eco_livreur"
-            target="_blank"
-            class="social-card instagram">
-
-            <i class="fab fa-instagram"></i>
-
-            <span>Instagram</span>
-
-        </a>
-
-        <a href="https://www.facebook.com/"
-            target="_blank"
-            class="social-card facebook">
-
-            <i class="fab fa-facebook-f"></i>
-
-            <span>Facebook</span>
-
-        </a>
-
-        <a href="https://wa.me/212680888210"
-            target="_blank"
-            class="social-card whatsapp">
-
-            <i class="fab fa-whatsapp"></i>
-
-            <span>WhatsApp</span>
-
-        </a>
-
-    </div>
-
-</section>
-<!--==================== CONTACT ====================-->
-
-<section class="contact section" id="contact">
-
-    <div class="section-header" data-aos="fade-up">
-
-        <span class="section-subtitle">
-            Contactez-nous
-        </span>
-
-        <h2 class="section-title">
-            Nous sommes à votre écoute
-        </h2>
-
-    </div>
-
-    <div class="contact-container">
-
-        <div class="contact-info" data-aos="fade-right">
-
-            <img src="support.jpg" alt="Support">
-
-            <h3>Eco Livreur</h3>
-
-            <p>
-                Livraison économique à Fès.
-            </p>
-
-            <div class="info">
-
-                <p>
-                    <i class="fa-solid fa-user"></i>
-
-                    <strong>Fondateur :</strong>
-
-                    YOUNES ALAOUI ISMAILI
-
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    Fès, Maroc
-
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-
-                    yns.alaoui20@gmail.com
-
-                </p>
-
-                <p>
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    0680888210
-
+                <p class="empty">
+                    Aucune commande.
                 </p>
 
             </div>
 
-        </div>
+        </section>
 
-        <form class="contact-form" data-aos="fade-left">
 
-            <input type="text" placeholder="Nom complet" required>
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
-            <input type="email" placeholder="Adresse Email" required>
+    <script src="app.js"></script>
 
-            <input type="tel" placeholder="Téléphone" required>
-
-            <input type="text" placeholder="Sujet">
-
-            <textarea rows="7"
-                placeholder="Votre message..."
-                required></textarea>
-
-            <button type="submit" class="btn">
-
-                Envoyer le message
-
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<!--==================== SUPPORT ====================-->
-
-<section class="support section">
-
-    <div class="support-box"
-        data-aos="zoom-in">
-
-        <i class="fa-solid fa-heart"></i>
-
-        <h2>
-
-            Soutenez Eco Livreur ❤️
-
-        </h2>
-
-        <p>
-
-            Partagez notre service avec vos proches et aidez-nous à grandir.
-
-        </p>
-
-        <a href="#"
-
-            class="btn">
-
-            Soutenir
-
-        </a>
-
-    </div>
-
-</section>
-
-<!--==================== LEAVE MESSAGE ====================-->
-
-<section class="guestbook section">
-
-    <div class="section-header">
-
-        <span class="section-subtitle">
-
-            Motivation
-
-        </span>
-
-        <h2 class="section-title">
-
-            Laissez-nous un message
-
-        </h2>
-
-    </div>
-
-    <form class="guest-form">
-
-        <input type="text"
-            placeholder="Votre nom">
-
-        <textarea
-            rows="6"
-            placeholder="Écrivez un message motivant..."></textarea>
-
-        <button
-            class="btn">
-
-            Publier
-
-        </button>
-
-    </form>
-
-</section>
-
-<!--==================== FOOTER ====================-->
-
-<footer>
-
-    <div class="footer-container">
-
-        <div class="footer-logo">
-
-            <img src="logo.png">
-
-            <h2>
-
-                Eco Livreur
-
-            </h2>
-
-            <p>
-
-                La Livraison Économique à Fès
-
-            </p>
-
-        </div>
-
-        <div class="footer-links">
-
-            <h3>
-
-                Navigation
-
-            </h3>
-
-            <a href="#home">Accueil</a>
-
-            <a href="#about">À propos</a>
-
-            <a href="#services">Services</a>
-
-            <a href="#contact">Contact</a>
-
-        </div>
-
-        <div class="footer-social">
-
-            <h3>
-
-                Suivez-nous
-
-            </h3>
-
-            <a href="https://www.instagram.com/eco_livreur" target="_blank">
-
-                <i class="fab fa-instagram"></i>
-
-            </a>
-
-            <a href="https://m.facebook.com/profile.php?id=61565418484384&mibextid=wwXIfr" target="_blank">
-
-                <i class="fab fa-facebook"></i>
-
-            </a>
-
-            <a href="https://wa.me/212680888210" target="_blank">
-
-                <i class="fab fa-whatsapp"></i>
-
-            </a>
-
-        </div>
-
-    </div>
-
-    <div class="copyright">
-
-        © 2026 Eco Livreur |
-        Tous droits réservés.
-
-        <br><br>
-
-        Développé par
-
-        <strong>
-
-            YOUNES ALAOUI ISMAILI
-
-        </strong>
-
-    </div>
-
-</footer>
-
-<!--==================== JS ====================-->
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
-
-<script src="script.js"></script>
-<div id="top">
-    <i class="fa-solid fa-arrow-up"></i>
-</div>
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
-
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<!-- Swiper -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<!-- Typed.js -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-<!-- CountUp.js -->
-<script src="https://cdn.jsdelivr.net/npm/countup.js@2.9.0/dist/countUp.umd.js"></script>
-
-<!-- ملف الجافاسكريبت الخاص بك -->
-<script src="script.js"></script>
 </body>
 
 </html>
